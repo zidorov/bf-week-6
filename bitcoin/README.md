@@ -15,6 +15,7 @@ https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list
 "c:\Program Files (x86)\Bitcoin\daemon\bitcoin-cli.exe" -regtest=1 -rpcport=8332 -rpcpassword=pass %1 %2 %3 %4 %5
 ```
 Для Linux/Mac создать alias:
+
 `alias btcclient='bitcoin-cli -regtest=1 -rpcport=8332 -rpcpassword=pass'`
 
 Далее выполнение команд осуществлять следующим образом:
