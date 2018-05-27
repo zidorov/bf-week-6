@@ -4,8 +4,14 @@
 https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list
 
 Запустить демон:
+#### Для Windows:
 ```
 "c:\Program Files (x86)\Bitcoin\daemon\bitcoind.exe" -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -listenonion=0
+```
+
+#### Для Linux/Mac:
+```
+bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -listenonion=0
 ```
 
 #### Для Windows:
