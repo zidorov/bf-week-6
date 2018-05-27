@@ -57,7 +57,7 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 Видим, что всего есть 1 транзакция создания 50 BTC (coinbase-транзакция).
 
-Скопируем значения поля "txid" <txid> для использования в дальшейнем в примере (будет переводить эти 50 BTC).
+Скопируем значения поля "txid" &lt;txid&rt; для использования в дальшейнем в примере (будет переводить эти 50 BTC).
 
 Пример: 56d8a69a250846b9acea9b4c7a5f9eed9d3ef4a254ba35247dbb75ad872695f4
 
@@ -214,7 +214,7 @@ http://siminchen.github.io/bitcoinIDE/build/editor.html
 
 https://bitcoin.stackexchange.com/questions/30543/can-i-transfer-bitcoins-generated-in-regtest-mode-to-a-friend
 
-## Задание.
+## Вопросы на понимание.
 1. Объясните, почему при вызове getbalance отображается 99.99990000 BTC?
 
 2. Что будет с балансами аккаунтов при выполнении generate 1 (создании еще одного блока)?
