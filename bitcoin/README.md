@@ -39,6 +39,7 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 пока 0.
 
+
 Выведем список аккаунтов
 
 `./btcclient.bat listaccounts`
@@ -57,9 +58,9 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 Видим, что всего есть 1 транзакция создания 50 BTC (coinbase-транзакция).
 
-Скопируем значения поля "txid" &lt;txid&rt; для использования в дальшейнем в примере (будет переводить эти 50 BTC).
+Скопируем значения поля "txid" &lt;txid&gt; для использования в дальшейнем в примере (будет переводить эти 50 BTC).
 
-Пример: 56d8a69a250846b9acea9b4c7a5f9eed9d3ef4a254ba35247dbb75ad872695f4
+*Пример: 56d8a69a250846b9acea9b4c7a5f9eed9d3ef4a254ba35247dbb75ad872695f4*
 
 Еще раз проверить баланс текущего аккаунта:
 
@@ -74,22 +75,23 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 В выводе видим, "immature_balance": 50.00000000
 
+
 Создаем новый аккаунт и адрес в нем (будем на него переводить средства)
 
 `./btcclient.bat getnewaddress "account2"`
 
-Записываем адрес **<address2>**
+Записываем адрес **&lt;address2&gt;**
 
-Пример: 2NFk5tWmRTvwo3gv9x2ENMB23ewPNR4aiG2
+*Пример: 2NFk5tWmRTvwo3gv9x2ENMB23ewPNR4aiG2*
 
 
 Создаем для аккаунта аккаунт "по-умолчанию" адрес для "сдачи":
 
 `./btcclient.bat getnewaddress ""`
 
-Записываем **<address3>**
+Записываем **&lt;address3&gt;**
 
-Пример: 2MvMvWTADM7krpbG6BeZ4D1JgXKoNA1MKGe
+*Пример: 2MvMvWTADM7krpbG6BeZ4D1JgXKoNA1MKGe*
 
 
 Проверим привязку адресов к аккаунтам:
@@ -126,15 +128,15 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 Сделаем перевод между адресами аккаунта по-умолчанию и аккаунта 2.
 
-Создаем транзакцию перевода 10 BTC с непотраченного output coinbase-транзакции самого первого блока на **<address2>** со сдачей на **<address3>**:
+Создаем транзакцию перевода 10 BTC с непотраченного output coinbase-транзакции самого первого блока на **&lt;address2&gt;** со сдачей на **&lt;address3&gt;**:
 
 `./btcclient.bat createrawtransaction "[{\"txid\": \"<txid>\",\"vout\":0}]" "{\"<address2>\": 10, \"<address3>\": 39.9999 }"`
 
-Получаем hex транзакции **<raw transaction hex>**
+Получаем hex транзакции **&lt;raw transaction hex&gt;**
 
-Пример: 0200000001f4952687ad75bb7d2435ba54a2f43e9ded9e5f7a4c9beaacb94608259aa6d8560000000000ffffffff0200ca9a3b0000000017a914f6c811abd649d89dc6b857a8bbc17731ea4815c887f0006bee0000000017a914222cb297c0fc1dfcc94ab94bf6714dc83fafbe538700000000
+*Пример: 0200000001f4952687ad75bb7d2435ba54a2f43e9ded9e5f7a4c9beaacb94608259aa6d8560000000000ffffffff0200ca9a3b0000000017a914f6c811abd649d89dc6b857a8bbc17731ea4815c887f0006bee0000000017a914222cb297c0fc1dfcc94ab94bf6714dc83fafbe538700000000*
 
-Пример
+*Пример*
 ```
 ./btcclient.bat createrawtransaction "[{\"txid\": \"4fa6b0361b416dd1cb3f468975100e5a3553984d6d6016a0910def3049c3820f\",\"vout\":0}]" "{\"2MznUekxqCqGEKc5dbBmJ22d3vkUphb6FE8\": 10, \"2NDoToJGp2PWnqscBc7z2tpxm6drP1TDZva\": 39.9999 }"
 ```
@@ -144,11 +146,11 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 `./btcclient.bat signrawtransaction <raw transaction hex>`
 
-Получаем **<signed raw transaction hex>**
+Получаем **&lt;signed raw transaction hex&gt;**
 
 Ожидаем "complete": true
 
-Пример: 0200000001f4952687ad75bb7d2435ba54a2f43e9ded9e5f7a4c9beaacb94608259aa6d8560000000049483045022100ad6d8d4ff8cfe8d0507af9e6f72298ec3f17520789b8f85ff481b6f46f2d6dcb0220449bfdbaff8b41da13608f1ff2ecda72ec58a8b24e369f811f38590a004749b701ffffffff0200ca9a3b0000000017a914f6c811abd649d89dc6b857a8bbc17731ea4815c887f0006bee0000000017a914222cb297c0fc1dfcc94ab94bf6714dc83fafbe538700000000
+*Пример: 0200000001f4952687ad75bb7d2435ba54a2f43e9ded9e5f7a4c9beaacb94608259aa6d8560000000049483045022100ad6d8d4ff8cfe8d0507af9e6f72298ec3f17520789b8f85ff481b6f46f2d6dcb0220449bfdbaff8b41da13608f1ff2ecda72ec58a8b24e369f811f38590a004749b701ffffffff0200ca9a3b0000000017a914f6c811abd649d89dc6b857a8bbc17731ea4815c887f0006bee0000000017a914222cb297c0fc1dfcc94ab94bf6714dc83fafbe538700000000*
 
 
 Проверяем, что транзакции нет в мемпуле (она еще не отправлена):
@@ -162,9 +164,9 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 `./btcclient.bat sendrawtransaction <signed raw transaction hex>`
 
-В случае успеха выводится хеш нашей транзакции перевода  **<transaction hash>**
+В случае успеха выводится хеш нашей транзакции перевода  **&lt;transaction hash&gt;**
 
-Пример: 32e9c13d47ee939fabb954ea1df76b2463ca6e9b1679a13b848683d656c239f5
+*Пример: 32e9c13d47ee939fabb954ea1df76b2463ca6e9b1679a13b848683d656c239f5*
 
 
 Можем посмотреть содержание транзакции:
@@ -176,7 +178,7 @@ bitcoind -debug=1 -printtoconsole -regtest=1 -rpcport=8332 -rpcpassword=pass -li
 
 `./btcclient.bat getrawmempool`
 
-В пуле появилась транзакция **<transaction hash>**.
+В пуле появилась транзакция **&lt;transaction hash&gt;**.
 
 
 Генерируем еще 1 блок, чтобы транзакция из mempool попала в блок. При этом из состава immature в состав mature передет еще несколько блоков, которые пополнят баланс первого аккаунта "":
@@ -213,6 +215,7 @@ https://en.bitcoin.it/wiki/Contract
 http://siminchen.github.io/bitcoinIDE/build/editor.html
 
 https://bitcoin.stackexchange.com/questions/30543/can-i-transfer-bitcoins-generated-in-regtest-mode-to-a-friend
+
 
 ## Вопросы на понимание.
 1. Объясните, почему при вызове getbalance отображается 99.99990000 BTC?
