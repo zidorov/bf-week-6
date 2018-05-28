@@ -272,7 +272,7 @@ datadir=<путь_к_папке_с_блокчейном>
 
 Для Linux/Mac создать alias:
 
-`alias btctestnet='bitcoin-cli -regtest=1 -rpcport=8332 -rpcuser=<имя_пользователя> -rpcpassword=<пароль>'`
+`alias btctestnet='bitcoin-cli -rpcport=18332 -rpcuser=<имя_пользователя> -rpcpassword=<пароль>'`
 
 
 Попробуем подключиться к демону и запросить статус блокчейна:
