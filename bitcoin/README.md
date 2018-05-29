@@ -264,10 +264,16 @@ datadir=<путь_к_папке_с_блокчейном>
 `bitcoind -dbcache=1024 -printtoconsole -onlynet=ipv4 -prune=<size_mb>`
 Указание параметра prune со значением &lt;size_mb&gt; позволит уменьшить объем хранимого на диске блокчейна, но не сократит время синхронизации (фактически, синхронизация будет выполнена полностью, но будут отброшена информация тех транзакций, output которых на текущеую дату потрачен).
 
-также можно добавить параметр prune=&lt;size_mb&gt; в файл bitcoin.conf.
+Также можно добавить параметр prune=&lt;size_mb&gt; в файл bitcoin.conf.
 
 
-Далее можно выполнять команды, подключаясь к запущенному демону:
+Скачать блокчейн, синхрониированный с параметром prune=1024, в виде архива testnet-prune1024.zip с папками blockchain и chainstate (которые нужно поместить в вашу папку bitcoin/testnet3) можно через ipfs:
+- через ipfs.io: http://gateway.ipfs.io/ipfs/QmWPLELTjUe2RPBSVzHFkCk5SXT4GZ3f3ko3vszaxEagSu
+- (лучше) запустив ipfs daemon локально и затем скачать по адресу http://localhost:8080/ipfs/QmWPLELTjUe2RPBSVzHFkCk5SXT4GZ3f3ko3vszaxEagSu
+- (еще лучше) командой ipfs get QmWPLELTjUe2RPBSVzHFkCk5SXT4GZ3f3ko3vszaxEagSu
+
+
+Далее можно выполнять команды, подключаясь к запущенному демону bitcoin:
 
 `bitcoin-cli -rpcport=18332 -rpcuser=<имя_пользователя> -rpcpassword=<пароль> <команда>`
 
