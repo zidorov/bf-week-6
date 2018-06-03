@@ -272,6 +272,14 @@ datadir=<путь_к_папке_с_блокчейном>
 - (лучше) запустив ipfs daemon локально и затем скачать по адресу http://localhost:8080/ipfs/QmWPLELTjUe2RPBSVzHFkCk5SXT4GZ3f3ko3vszaxEagSu
 - (еще лучше) командой ipfs get QmWPLELTjUe2RPBSVzHFkCk5SXT4GZ3f3ko3vszaxEagSu
 
+Архив в google drive https://goo.gl/EFmZLD
+
+Помещать содержимое архива в вашу папку bitcoin/testnet3 нужно следующим образом:
+1) запустить демон с ключами как указано выше (он создаст папку testnet3)
+2) остановить демон, удалить папки blocks и chainstate из папки testnet3
+3) разархивировать скаченный архив в папку testnet3 (в ней должны полявиться папки blocks и chainstate с содержимом из архива)
+
+
 
 Далее можно выполнять команды, подключаясь к запущенному демону bitcoin:
 
